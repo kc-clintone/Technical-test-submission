@@ -1,4 +1,6 @@
-# Q3: Front-end, React Example
+# Front-end, React Example
+
+## Q3:
 
 I will use React.js for this problem, here is my solution:
 
@@ -12,6 +14,7 @@ function Profile() {
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    // fetch the user inside a use effect
     fetch('https://jsonplaceholder.typicode.com/users/1')
       .then(res => res.json())
       .then(data => {
@@ -21,10 +24,12 @@ function Profile() {
       .catch(() => setError(true));
   }, []);
 
+  // this is my little loading state and error state
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error loading data.</p>;
 
   return (
+    // then i return and render the fetched data inside a jsx component
     <div>
       <h1>{user.name}</h1>
       <p>{user.email}</p>
@@ -44,4 +49,4 @@ def calculate_total(sales):
 ```
 
 ### My explanation:
-First, I multiply price and quantity for each item, then I sum them up.
+To calculate total revenue, I multiply price and quantity for each item, then I sum them up.
